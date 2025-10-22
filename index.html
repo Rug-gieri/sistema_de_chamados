@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamados CPD</title>
+    <link rel="stylesheet" href="css/syle.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <img src="assets/images/logo_header.png" style="width: 80px; height: auto;">
+                <div class="logo">Chamágil CPD</div>
+                <nav>
+                    <ul>
+                        <li><a href="#" class="nav-link" data-page="home">Início</a></li>
+                        <li><a href="#" class="nav-link" data-page="novo-chamado">Novo Chamado</a></li>
+                        <li><a href="#" class="nav-link" data-page="meus-chamados">Meus Chamados</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+    <main class="main-content">
+        <div class="container">
+            <!-- Página Inicial -->
+            <div id="home-page" class="page">
+                <h1 class="page-title">Sistema de Suporte Técnico</h1>
+                <div class="card">
+                    <p>Bem-vindo ao sistema de chamados de suporte técnico. Selecione uma das opções abaixo para continuar:</p>
+                    <div style="margin-top: 1.5rem;">
+                        <button class="btn nav-link" data-page="novo-chamado">Abrir Novo Chamado</button>
+                        <button class="btn nav-link" data-page="meus-chamados" style="margin-left: 1rem;">Ver Meus Chamados</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Página de Novo Chamado -->
+            <div id="novo-chamado-page" class="page" style="display: none;">
+                <h1 class="page-title">Abrir Novo Chamado</h1>
+                
+                <!-- Seleção de Categoria -->
+                <div class="card" id="selecao-categoria">
+                    <h2>Selecione a Categoria do Problema</h2>
+                    <div class="categorias-grid" id="categorias-container">
+                        <!-- As categorias serão carregadas via JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Seleção de Tipo de Chamado -->
+                <div class="card tipos-chamado" id="selecao-tipo">
+                    <h2>Selecione o Tipo de Problema</h2>
+                    <button class="btn" id="voltar-categorias" style="margin-bottom: 1rem;">← Voltar para Categorias</button>
+                    <div class="tipos-grid" id="tipos-container">
+                        <!-- Os tipos de chamado serão carregados via JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Formulário de Detalhes do Chamado -->
+                <div class="card formulario-chamado" id="formulario-detalhes">
+                    <h2>Detalhes do Chamado</h2>
+                    <button class="btn" id="voltar-tipos" style="margin-bottom: 1rem;">← Voltar para Tipos</button>
+                    
+                    <form id="form-chamado">
+                        <div class="form-group">
+                            <label for="titulo">Título do Chamado</label>
+                            <input type="text" id="titulo" name="titulo" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="descricao">Descrição Detalhada</label>
+                            <textarea id="descricao" name="descricao" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="prioridade">Prioridade</label>
+                            <select id="prioridade" name="prioridade">
+                                <option value="baixa">Baixa</option>
+                                <option value="media" selected>Média</option>
+                                <option value="alta">Alta</option>
+                            </select>
+                        </div>
+                        
+                        <input type="hidden" id="categoria-id" name="categoria_id">
+                        <input type="hidden" id="tipo-chamado-id" name="tipo_chamado_id">
+                        
+                        <button type="submit" class="btn">Abrir Chamado</button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- Página de Meus Chamados -->
+            <div id="meus-chamados-page" class="page" style="display: none;">
+                <h1 class="page-title">Meus Chamados</h1>
+                <div class="card">
+                    <table class="table" id="tabela-chamados">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Título</th>
+                                <th>Categoria</th>
+                                <th>Tipo</th>
+                                <th>Prioridade</th>
+                                <th>Status</th>
+                                <th>Data Abertura</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Os chamados serão carregados via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>Sistema de Chamados CPD &copy; 2025 - Todos os direitos reservados</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
