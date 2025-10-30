@@ -1,6 +1,6 @@
 # Protóipo de Front para sistema de chamados 
 
-* Falta incluir mais funções JS;
+Falta: 
 * Comunição com Banco de dados;
 * CRUD no banco comunicando com aplicação Web;
 * BI de chamados e dados coletados.
